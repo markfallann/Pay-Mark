@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090d">
+
+  <title>Pay Mark</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="background">
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+  </div>
+
+  <main class="container">
+
+    <section class="card">
+
+      <div class="brand">
+        <div class="logo">M</div>
+
+        <div>
+          <h1>Pay Mark</h1>
+          <p>Payment Page</p>
+        </div>
+      </div>
+
+      <div class="intro">
+        <span class="badge">SECURE PAYMENT</span>
+
+        <h2>Bayar ke Mark</h2>
+
+        <p>
+          Masukkan nominal yang ingin kamu bayarkan.
+          Setelah pembayaran berhasil, kamu akan mendapatkan kode bukti.
+        </p>
+      </div>
+
+      <form id="paymentForm">
+
+        <label for="amount">Nominal Pembayaran</label>
+
+        <div class="amount-box">
+          <span>Rp</span>
+          <input
+            id="amount"
+            type="number"
+            min="1000"
+            placeholder="5.000"
+            required
+          >
+        </div>
+
+        <label for="description">Keterangan</label>
+
+        <input
+          id="description"
+          class="text-input"
+          type="text"
+          maxlength="100"
+          placeholder="Contoh: pembayaran..."
+        >
+
+        <button id="payButton" type="submit">
+          <span>Buat Pembayaran</span>
+          <span class="arrow">→</span>
+        </button>
+
+      </form>
+
+      <div id="paymentArea" class="payment-area hidden">
+
+        <div class="divider"></div>
+
+        <div class="status pending" id="status">
+          <span class="status-dot"></span>
+          Menunggu pembayaran
+        </div>
+
+        <div class="qr-wrapper">
+          <div class="qr-placeholder" id="qrBox">
+            <div class="qr-icon">QR</div>
+            <span>QRIS akan muncul di sini</span>
+          </div>
+        </div>
+
+        <div class="payment-info">
+
+          <div>
+            <small>Nominal</small>
+            <strong id="displayAmount">Rp0</strong>
+          </div>
+
+          <div>
+            <small>Status</small>
+            <strong id="displayStatus">Pending</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div id="successArea" class="success-area hidden">
+
+        <div class="success-icon">✓</div>
+
+        <h3>Pembayaran Berhasil</h3>
+
+        <p>
+          Simpan kode ini sebagai bukti pembayaran.
+        </p>
+
+        <div class="code-box">
+          <span id="paymentCode">ABCD-abcd-abcd</span>
+
+          <button id="copyButton" type="button">
+            Salin
+          </button>
+        </div>
+
+        <button id="whatsappButton" class="whatsapp-button" type="button">
+          Kirim ke Admin
+          <span>→</span>
+        </button>
+
+        <p class="admin-note">
+          WhatsApp akan terbuka dengan pesan pembayaran yang sudah disiapkan.
+        </p>
+
+      </div>
+
+      <footer>
+        Pay Mark
+      </footer>
+
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
